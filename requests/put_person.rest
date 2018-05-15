@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/persons/5af96f88c6b205a11b6b9c4d
+content-type: application/json
+
+{
+    "name": "Simo Huotari",
+    "number": "040-654321" 
+}
