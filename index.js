@@ -60,16 +60,9 @@ const formatPerson = (person) => {
     }
   }
 
-const length = app.get('/api/persons', (req,res)=> {
-    Person
-        .find({})
-        .then(function(result) {
-            console.log(result)
-            res.json(result.reduce((acc, cur) => acc + 1, 0))
-        })
-})
 
 app.get('/info', (req, res) => {
+    let length = persons.length
     let time = new Date()
     res.send(
         `<div>
