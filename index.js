@@ -14,29 +14,6 @@ morgan.token('body', function(req, res){ return JSON.stringify(req.body) })
 
 app.use(morgan(':method :url :body :status :res[content-length] - :response-time ms'))
 
-let persons = [
-  {
-    name: 'Arto Hellas',
-    number: '040-123456',
-    id: 1
-  },
-  {
-    name: 'Martti Tienari',
-    number: '040-123456',
-    id: 2
-  },
-  {
-    name: 'Arto Järvinen',
-    number: '040-123456',
-    id: 3
-  },
-  {
-    name: 'Lea Kutvonen',
-    number: '040-123456',
-    id: 4
-  }
-]
-
 app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')
 })
@@ -57,6 +34,7 @@ const formatPerson = (person) => {
   }
 }
 
+let persons = []
 
 app.get('/info', (req, res) => {
   let length = persons.length
@@ -65,7 +43,8 @@ app.get('/info', (req, res) => {
     `<div>
       <p>puhelinluettelossa ${length} henkilön tiedot</p>
       ${time}
-    </div>`)
+    </div>`
+  )
 })
 
 app.get('/api/persons/:id', (request, response) => {
